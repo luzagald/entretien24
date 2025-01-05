@@ -2,8 +2,8 @@
 
 /* Styles pour la table MATRICE */  
 .matrice-result {  
-    background-color: #f9f9f9; /* Un fond léger */  
-    border: 1px solid #ccc;  
+    background-color: #007bff; /* Un fond léger */  
+    border: 1px solid #007bff;  
 }  
 
 .matrice-result table {  
@@ -12,33 +12,33 @@
 
 /* Styles pour l'entretien curatif */  
 .entretien-result {  
-    background-color: #e9f7f9; /* Un différent fond */  
-    border: 1px solid #5bc0de;  
+    background-color: #007bff; /* Un différent fond */  
+    border: 1px solid #007bff;  
 }  
 
 .entretien-result table {  
-    border-color: #5bc0de;  
+    border-color: #007bff;  
 }  
 
 /* Styles pour l'entretien préventif */  
 .vidange-result {  
-    background-color: #fff3cd; /* Un autre fond */  
-    border: 1px solid #ffeeba;  
+    background-color: #007bff; /* Un autre fond */  
+    border: 1px solid #007bff;  
 }  
 
 .vidange-result table {  
-    border-color: #ffeeba;  
+    border-color: #007bff;  
 }  
 
 /* En-têtes de tableaux */  
 .matrice-result table th {  
-    background-color: #d9edf7; /* Couleur différente pour les en-têtes */  
+    background-color: #007bff; /* Couleur différente pour les en-têtes */  
 }  
 
 .entretien-result table th {  
-    background-color: #d1ecf1;  
+    background-color: #007bff;  
 }  
 
 .vidange-result table th {  
-    background-color: #ffeeba;  
+    background-color: #007bff;  
 }
