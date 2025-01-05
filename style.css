@@ -1,0 +1,24 @@
+.btn-dark {
+    background-color: #000; /* Couleur de fond noire */
+    color: #fff; /* Texte blanc */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Couleur de fond jaune */
+    color: #000; /* Texte noir */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: #fff; /* Texte blanc */
+}
+
+.table.vidange24 th {
+    background-color: #3357FF; /* couleur personnalisée */
+    color: white; /* couleur du texte */
+}
+
+.table-matrice {
+    /* Styles spécifiques pour la table matrice */
+    display: none; /* Ajout d'un style par défaut pour éviter les règles vides */
+}
