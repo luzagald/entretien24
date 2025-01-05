@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche Matricule</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fb;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 20%;
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ecf0f6;
+            padding: 4px 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #d4daf3;
+        }
+        .result-section {
+            margin-top: 20px;
+        }
+        .result-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .table-wrapper {
+            overflow-x: scroll;
+        }
+        table {
+            width: 110%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 2px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: bold;
+            color: #080809;
+        }
+        th {
+            background-color: #2879f2;
+            color: #ecf0f6;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #ebe5e5;
+        }
+        tr:hover {
+            background-color: #f7f9fb;
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 12px;
+            text-align: left;
+        }
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 10px;
+            }
+            .form-group input, button {
+                font-size: 10px;
+            }
+            th, td {
+                font-size: 10px;
+                padding: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Recherche de Matricule</h1>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="matricule">Entrez le matricule :</label>
+            <input type="text" id="matricule" name="matricule" placeholder="Ex : 041-01414-40 or CB1523" required>
+        </div>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    {% if matrice_result %}
+    <div class="result-section matrice-result"> 
+        <h3>Table MATRICE</h3>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>MATRICULE</th>
+                    <th>DESIGNATION</th>
+                    <th>ANNEE</th>
+                    <th>CATIGORIE</th>
+                    <th>CD</th>
+                    <th>ENG/VEHICULE</th>
+                    <th>MARQUE</th>
+                    <th>CATIGORIE</th>
+                </tr>
+                <tr>
+                    <td>{{ matrice_result[0] }}</td>
+                    <td>{{ matrice_result[1] }}</td>
+                    <td>{{ matrice_result[2] }}</td>
+                    <td>{{ matrice_result[3] }}</td>
+                    <td>{{ matrice_result[4] }}</td>
+                    <td>{{ matrice_result[5] }}</td>
+                    <td>{{ matrice_result[6] }}</td>
+                    <td>{{ matrice_result[7] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    {% if entretien_result %}
+    
+    <div class="result-section entretien-result">  
+        <h3>Entretien Curatif (ENTRETIEN_CURATIF)</h3>
+        <div class="table-wrapper">
+        <table class="curative-table">
+            <tr>
+                <!-- Affichage de toutes les colonnes de la table ENTRETIEN_CURATIF -->
+                <th style="width: 120px;">NB.SI</th>
+                <th style="width: 100px;">CATIGORIE</th>
+                <th style="width: 150px;">DESIGNATION</th>
+                <th style="width: 120px;">MATRICULE</th>
+                <th style="width: 120px;">DATE ENTREE</th>
+                <th style="width: 200px;" class="allow-wrap">PANNE DECLAREE</th>
+                <th style="width: 120px;">SIT.ACTUELLE</th>
+                <th style="width: 200px;" class="allow-wrap">PIECES</th>
+                <th style="width: 120px;">DATE SORTIE</th>
+                <th style="width: 150px;">INTERVENANT</th>
+                <th style="width: 100px;">AFFECTATION</th>
+            </tr>
+            {% for row in entretien_result %}
+            <tr>
+                <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
+                <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
+                <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
+                <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
+                <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
+                <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
+                <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
+                <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
+                <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
+                <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
+                <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    {% else %}
+        <p>Aucun entretien curatif trouvé dans ENTRETIEN_CURATIF.</p>
+    {% endif %}
+</div>
+
+    {% if vidange_result %}
+    <div class="result-section vidange-result"> 
+        <h3>Entretien Préventif (VIDANGE24)</h3>
+        <div class="table-wrapper">
+        <table>
+            <tr>
+                <!-- Affichage de toutes les colonnes de la table VIDANGE24 -->
+                <th style="width: 150px;">NB.SI</th>
+                <th style="width: 50px;">V</th>
+                <th style="width: 150px;">STK</th>
+                <th style="width: 250px;">DESIGNATION</th>
+                <th style="width: 120px;">MATRICULE</th>
+                <th style="width: 120px;">DATE</th>
+                <th style="width: 0px;">PREVISION</th>
+                <th style="width: 150px;">COMPTEUR KM/H</th>
+                <th style="width: 80px;">TYPE DE HUILE</th>
+                <th style="width: 80px;">QTE</th>
+                <th style="width: 60px;">F/H</th>
+                <th style="width: 60px;">F/G</th>
+                <th style="width: 60px;">F/AIR</th>
+                <th style="width: 60px;">F/HYD</th>
+                <th style="width: 60px;">GR</th>
+                <th style="width: 0px;">COMPT CH,DISTR</th>
+                <th style="width: 350px;">OBS</th>
+                <th style="width: 150px;">ENTRETIE</th>
+                <!-- Ajoutez d'autres colonnes ici -->
+            </tr>
+            {% for row in vidange_result %}
+            <tr>
+                <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
+                <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
+                <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
+                <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
+                <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
+                <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
+                <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
+                <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
+                <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
+                <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
+                <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
+                <td>{{ '' if row[11] in [None, '#NOM?'] else row[11] }}</td>
+                <td>{{ '' if row[12] in [None, '#NOM?'] else row[12] }}</td>
+                <td>{{ '' if row[13] in [None, '#NOM?'] else row[13] }}</td>
+                <td>{{ '' if row[14] in [None, '#NOM?'] else row[14] }}</td>
+                <td>{{ '' if row[15] in [None, '#NOM?'] else row[15] }}</td>
+                <td>{{ '' if row[16] in [None, '#NOM?'] else row[16] }}</td>
+                <td>{{ '' if row[17] in [None, '#NOM?'] else row[17] }}</td>
+                <td>{{ '' if row[18] in [None, '#NOM?'] else row[18] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    {% else %}
+        <p>Aucun entretien préventif trouvé dans VIDANGE24.</p>
+    {% endif %}
+ 
+</body>
+</html>
