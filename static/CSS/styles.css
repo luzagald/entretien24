@@ -1,0 +1,222 @@
+/* Styles spécifiques à la table matrice */
+.matrice-table {
+    width: 120%; /* Ajustez la largeur selon vos besoins */
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background: #dad2d2;
+}
+
+.matrice-table,
+.matrice-table th,
+.matrice-table td {
+    border: 1px solid #dfd6d6; /* Bordures pour la table */
+}
+
+.matrice-table th,
+.matrice-table td {
+    padding: 5px; /* Espacement intérieur */
+    text-align: left;
+    font-size: 10px; /* Ajustez selon vos besoins */
+    font-weight: bold;
+    color: #111112; /* Couleur du texte */
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+}
+
+.matrice-table th {
+    background-color: #01060e; /* Couleur d'arrière-plan pour les en-têtes */
+    color: #ecf0f6; /* Couleur du texte pour les en-têtes */
+}
+
+.matrice-table tr:nth-child(even) {
+    background-color: #ebe5e5; /* Fond clair pour les lignes paires */
+}
+
+.matrice-table tr:hover {
+    background-color: #9da2a7; /* Fond plus clair au survol */
+}
+
+/* Styles spécifiques à la table Vidange */
+.vidange-table {
+    width: 120%; /* Ajustez la largeur selon vos besoins */
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background: #dad2d2;
+}
+
+.vidange-table,
+.vidange-table th,
+.vidange-table td {
+    border: 1px solid #dfd6d6; /* Bordures pour la table */
+}
+
+.vidange-table th,
+.vidange-table td {
+    padding: 5px; /* Espacement intérieur */
+    text-align: left;
+    font-size: 10px; /* Ajustez selon vos besoins */
+    font-weight: bold;
+    color: #111112; /* Couleur du texte */
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+}
+
+.vidange-table th {
+    background-color: #2575ee; /* Couleur d'arrière-plan pour les en-têtes */
+    color: #ecf0f6; /* Couleur du texte pour les en-têtes */
+}
+
+.vidange-table tr:nth-child(even) {
+    background-color: #ebe5e5; /* Fond clair pour les lignes paires */
+}
+
+.vidange-table tr:hover {
+    background-color: #9da2a7; /* Fond plus clair au survol */
+}
+
+/* Styles spécifiques à la table entretien */
+.entretien-table {
+    width: 120%; /* Ajustez la largeur selon vos besoins */
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background: #dad2d2;
+}
+
+.entretien-table,
+.entretien-table th,
+.entretien-table td {
+    border: 1px solid #dfd6d6; /* Bordures pour la table */
+}
+
+.entretien-table th,
+.entretien-table td {
+    padding: 5px; /* Espacement intérieur */
+    text-align: left;
+    font-size: 10px; /* Ajustez selon vos besoins */
+    font-weight: bold;
+    color: #111112; /* Couleur du texte */
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+}
+
+.entretien-table th {
+    background-color: #e0620e; /* Couleur d'arrière-plan pour les en-têtes */
+    color: #ecf0f6; /* Couleur du texte pour les en-têtes */
+}
+
+.entretien-table tr:nth-child(even) {
+    background-color: #ebe5e5; /* Fond clair pour les lignes paires */
+}
+
+.entretien-table tr:hover {
+    background-color: #9da2a7; /* Fond plus clair au survol */
+}
+
+  /* Style pour la barre de recherche */
+  button {
+    margin: 10px 0;
+    padding: 3px;
+    background-color: #2575ee;
+    border-radius: 3px;
+    color: #e0e3ec;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+
+
+        /* Sélectionne spécifiquement un input avec l'ID "search-bar" */
+    input {
+        /* Taille */
+        width: 200px; /* Largeur */
+        height: 15px; /* Hauteur */
+        
+        /* Couleurs */
+        background-color: #f9f9f9; /* Couleur de fond */
+        color: #333; /* Couleur du texte */
+        
+        /* Bordure */
+        border: 2px solid #ccc; /* Bordure grise */
+        border-radius: 5px; /* Coins arrondis */
+        
+        /* Typographie */
+        font-size: 16px; /* Taille de la police */
+        font-family: Arial, sans-serif; /* Police */
+    
+        /* Espacement interne */
+        padding: 5px 10px; /* Espace à l'intérieur de l'input */
+    
+        /* Ombre */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre discrète */
+    
+        /* Transition pour effet lors du focus */
+        transition: all 0.3s ease;
+    }
+    
+    /* Changer la couleur de la bordure au focus */
+    input {
+        border-color: #007bff; /* Bordure bleue */
+        outline: none; /* Supprime la bordure par défaut */
+        box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4); /* Accentuer l'ombre */
+        color: #2f5eec;
+    }
+    h3 {
+        margin: 10px 0;
+        padding: 3px;
+        background-color: #ebeef1;
+        border-radius: 3px;
+        color: #1d4edf;
+        font-family: 'Courier New', Arial, Helvetica, sans-serif, monospace;
+        font-size: 16px;
+      }
+      label {
+        margin: 10px 0;
+        padding: 3px;
+        background-color: #ebf0f7;
+        border-radius: 3px;
+        color: #2f5eec;
+        font-family: 'Courier New', Arial, Helvetica, sans-serif, monospace;
+        font-size: 14px;
+      }
+      h1 {
+        margin: 10px 0;
+        padding: 3px;
+        background-color: #f5f5f7;
+        border-radius: 3px;
+        color: #1445d8;
+        font-family: 'Courier New', Arial, Helvetica, sans-serif, monospace;
+        font-size: 16px;
+      }
+      p {
+        margin: 10px 0;
+        padding: 3px;
+        background-color: #edf0f3;
+        border-radius: 3px;
+        color: #446de9;
+        font-family: 'Courier New', Arial, Helvetica, sans-serif, monospace;
+        font-size: 14px;
+      }
+        /* Conteneur de l'input */
+    .input-container {
+        position: relative;
+        width: 100%; /* Ajuste selon vos besoins */
+    }
+
+    /* Champ de texte */
+    .input-container input {
+        width: 30%;
+        padding: 10px 40px 10px 10px; /* Ajout d'espace pour l'icône */
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    /* Icône de recherche */
+    .input-container .icon {
+        position: absolute;
+        left: 440px; /* Espace à droite */
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6085e9;
+        font-size: 18px;
+        pointer-events: none; /* L'icône ne peut pas être cliquée */
+    }

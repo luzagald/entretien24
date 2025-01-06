@@ -2,7 +2,8 @@
 <html lang="fr">
     <head>  
         <title>Recherche de Matricule</title>  
-        <link rel="stylesheet" type="text/css" href="css/styles.css">  
+        <link rel="stylesheet" type="text/css" href="\static\css\styles.css"> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
     </head>
 <body>
 <div class="container">
@@ -11,7 +12,10 @@
     <form method="POST">
         <div class="form-group">
             <label for="matricule">Entrez le matricule :</label>
-            <input type="text" id="matricule" name="matricule" placeholder="Ex : 041-01414-40 or CB1523" required>
+            <div class="input-container">
+                <input type="text" id="matricule" name="matricule" placeholder="Ex : 041-01414-40 or CB1523" required>
+                <i class="icon fas fa-search"></i> <!-- Classe "fas" pour FontAwesome -->
+            </div>
         </div>
         <button type="submit">Rechercher</button>
     </form>
@@ -20,7 +24,7 @@
         <p class="error">{{ error }}</p>
     {% endif %}
     {% if matrice_result %}
-    <div class="result-section matrice-result"> 
+    <div class="result-section matrice-table"> 
         <h3>Table MATRICE</h3>
         <div class="table-wrapper">
             <table>
@@ -48,51 +52,10 @@
         </div>
     </div>
     {% endif %}
-    {% if entretien_result %}
-    
-    <div class="result-section entretien-result">  
-        <h3>Entretien Curatif (ENTRETIEN_CURATIF)</h3>
-        <div class="table-wrapper">
-        <table class="curative-table">
-            <tr>
-                <!-- Affichage de toutes les colonnes de la table ENTRETIEN_CURATIF -->
-                <th style="width: 120px;">NB.SI</th>
-                <th style="width: 100px;">CATIGORIE</th>
-                <th style="width: 150px;">DESIGNATION</th>
-                <th style="width: 120px;">MATRICULE</th>
-                <th style="width: 120px;">DATE ENTREE</th>
-                <th style="width: 200px;" class="allow-wrap">PANNE DECLAREE</th>
-                <th style="width: 120px;">SIT.ACTUELLE</th>
-                <th style="width: 200px;" class="allow-wrap">PIECES</th>
-                <th style="width: 120px;">DATE SORTIE</th>
-                <th style="width: 150px;">INTERVENANT</th>
-                <th style="width: 100px;">AFFECTATION</th>
-            </tr>
-            {% for row in entretien_result %}
-            <tr>
-                <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
-                <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
-                <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
-                <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
-                <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
-                <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
-                <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
-                <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
-                <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
-                <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
-                <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-    </div>
-    {% else %}
-        <p>Aucun entretien curatif trouvé dans ENTRETIEN_CURATIF.</p>
-    {% endif %}
 </div>
 
     {% if vidange_result %}
-    <div class="result-section vidange-result"> 
+    <div class="result-section vidange-table"> 
         <h3>Entretien Préventif (VIDANGE24)</h3>
         <div class="table-wrapper">
         <table>
@@ -147,6 +110,48 @@
     {% else %}
         <p>Aucun entretien préventif trouvé dans VIDANGE24.</p>
     {% endif %}
- 
+
+    {% if entretien_result %}
+    <div class="result-section entretien-table">  
+        <h3>Entretien Curatif (ENTRETIEN_CURATIF)</h3>
+        <div class="table-wrapper">
+        <table class="curative-table">
+            <tr>
+                <!-- Affichage de toutes les colonnes de la table ENTRETIEN_CURATIF -->
+                <th style="width: 120px;">NB.SI</th>
+                <th style="width: 100px;">CATIGORIE</th>
+                <th style="width: 150px;">DESIGNATION</th>
+                <th style="width: 120px;">MATRICULE</th>
+                <th style="width: 120px;">DATE ENTREE</th>
+                <th style="width: 200px;" class="allow-wrap">PANNE DECLAREE</th>
+                <th style="width: 120px;">SIT.ACTUELLE</th>
+                <th style="width: 200px;" class="allow-wrap">PIECES</th>
+                <th style="width: 120px;">DATE SORTIE</th>
+                <th style="width: 150px;">INTERVENANT</th>
+                <th style="width: 100px;">AFFECTATION</th>
+            </tr>
+            {% for row in entretien_result %}
+            <tr>
+                <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
+                <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
+                <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
+                <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
+                <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
+                <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
+                <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
+                <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
+                <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
+                <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
+                <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    {% else %}
+        <p>Aucun entretien curatif trouvé dans ENTRETIEN_CURATIF.</p>
+    {% endif %}
+    
+    
 </body>
 </html>
