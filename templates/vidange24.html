@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Table vidange24</title>
+    <link rel="stylesheet" href="\static\css\styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Table vidange24</h1>
+    <table>
+        <tr>
+                <!-- Affichage de toutes les colonnes de la table VIDANGE24 -->
+                <th style="width: 150px;">NB.SI</th>
+                <th style="width: 50px;">V</th>
+                <th style="width: 150px;">STK</th>
+                <th style="width: 250px;">DESIGNATION</th>
+                <th style="width: 120px;">MATRICULE</th>
+                <th style="width: 120px;">DATE</th>
+                <th style="width: 0px;">PREVISION</th>
+                <th style="width: 150px;">COMPTEUR KM/H</th>
+                <th style="width: 80px;">TYPE DE HUILE</th>
+                <th style="width: 80px;">QTE</th>
+                <th style="width: 60px;">F/H</th>
+                <th style="width: 60px;">F/G</th>
+                <th style="width: 60px;">F/AIR</th>
+                <th style="width: 60px;">F/HYD</th>
+                <th style="width: 60px;">GR</th>
+                <th style="width: 0px;">COMPT CH,DISTR</th>
+                <th style="width: 350px;">OBS</th>
+                <th style="width: 150px;">ENTRETIE</th>
+                <!-- Ajoutez d'autres colonnes ici -->
+            </tr>
+            {% for row in donnees %}
+            <tr>
+                <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
+                <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
+                <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
+                <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
+                <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
+                <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
+                <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
+                <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
+                <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
+                <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
+                <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
+                <td>{{ '' if row[11] in [None, '#NOM?'] else row[11] }}</td>
+                <td>{{ '' if row[12] in [None, '#NOM?'] else row[12] }}</td>
+                <td>{{ '' if row[13] in [None, '#NOM?'] else row[13] }}</td>
+                <td>{{ '' if row[14] in [None, '#NOM?'] else row[14] }}</td>
+                <td>{{ '' if row[15] in [None, '#NOM?'] else row[15] }}</td>
+                <td>{{ '' if row[16] in [None, '#NOM?'] else row[16] }}</td>
+                <td>{{ '' if row[17] in [None, '#NOM?'] else row[17] }}</td>
+                <td>{{ '' if row[18] in [None, '#NOM?'] else row[18] }}</td>
+            </tr>
+            {% endfor %}
+        <table>
+</div>
+</body>
+</html>

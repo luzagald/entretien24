@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Table Matrice</title>
+    <link rel="stylesheet" href="\static\css\styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Table Matrice</h1>
+    <table>
+        <tr>
+            <th>MATRICULE</th>
+            <th>DESIGNATION</th>
+            <th>ANNEE</th>
+            <th>CATIGORIE</th>
+            <th>CD</th>
+            <th>ENG/VEHICULE</th>
+            <th>MARQUE</th>
+            <th>CATIGORIE</th>
+        </tr>
+        {% for row in donnees %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

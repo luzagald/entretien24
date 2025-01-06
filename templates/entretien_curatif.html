@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Table entretien_curatif</title>
+    <link rel="stylesheet" href="\static\css\styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Table entretien_curatif</h1>
+    <table>
+        <tr>
+            <!-- Affichage de toutes les colonnes de la table ENTRETIEN_CURATIF -->
+            <th style="width: 120px;">NB.SI</th>
+            <th style="width: 100px;">CATIGORIE</th>
+            <th style="width: 150px;">DESIGNATION</th>
+            <th style="width: 120px;">MATRICULE</th>
+            <th style="width: 120px;">DATE ENTREE</th>
+            <th style="width: 200px;" class="allow-wrap">PANNE DECLAREE</th>
+            <th style="width: 120px;">SIT.ACTUELLE</th>
+            <th style="width: 200px;" class="allow-wrap">PIECES</th>
+            <th style="width: 120px;">DATE SORTIE</th>
+            <th style="width: 150px;">INTERVENANT</th>
+            <th style="width: 100px;">AFFECTATION</th>
+        </tr>
+        {% for row in donnees %}
+        <tr>
+            <td>{{ '' if row[0] in [None, '#NOM?'] else row[0] }}</td>
+            <td>{{ '' if row[1] in [None, '#NOM?'] else row[1] }}</td>
+            <td>{{ '' if row[2] in [None, '#NOM?'] else row[2] }}</td>
+            <td>{{ '' if row[3] in [None, '#NOM?'] else row[3] }}</td>
+            <td>{{ '' if row[4] in [None, '#NOM?'] else row[4] }}</td>
+            <td>{{ '' if row[5] in [None, '#NOM?'] else row[5] }}</td>
+            <td>{{ '' if row[6] in [None, '#NOM?'] else row[6] }}</td>
+            <td>{{ '' if row[7] in [None, '#NOM?'] else row[7] }}</td>
+            <td>{{ '' if row[8] in [None, '#NOM?'] else row[8] }}</td>
+            <td>{{ '' if row[9] in [None, '#NOM?'] else row[9] }}</td>
+            <td>{{ '' if row[10] in [None, '#NOM?'] else row[10] }}</td>
+        </tr>
+            {% endfor %}
+        <table>
+</div>
+</body>
+</html>
