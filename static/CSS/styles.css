@@ -220,3 +220,50 @@
         font-size: 18px;
         pointer-events: none; /* L'icône ne peut pas être cliquée */
     }
+    a {
+        margin: 10px 0;
+        padding: 3px;
+        background-color: #edf0f3;
+        border-radius: 3px;
+        color: #446de9;
+        font-family: 'Courier New', Arial, Helvetica, sans-serif, monospace;
+        font-size: 14px;
+    }
+    /* Styles spécifiques à la table vdange24 */
+    table {
+        width: 120%; /* Ajustez la largeur selon vos besoins */
+        border-collapse: collapse;
+        margin-bottom: 10px;
+        background: #edf0f3;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid #dfd6d6; /* Bordures pour la table */
+    }
+    
+    th,
+    td {
+        padding: 5px; /* Espacement intérieur */
+        text-align: left;
+        font-size: 10px; /* Ajustez selon vos besoins */
+        font-weight: bold;
+        color: #111112; /* Couleur du texte */
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+    }
+    
+    th {
+        background-color: #6da2eb; /* Couleur d'arrière-plan pour les en-têtes */
+        color: #ecf0f6; /* Couleur du texte pour les en-têtes */
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f7f7f7; /* Fond clair pour les lignes paires */
+    }
+    
+    tr:hover {
+        background-color: #9da2a7; /* Fond plus clair au survol */
+    }
+    
